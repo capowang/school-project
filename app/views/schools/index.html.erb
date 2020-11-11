@@ -1,0 +1,8 @@
+<ol>
+	<% @schools.each do |school| %>
+		<li>
+			<h2><%= link_to school.title, school_path(school) %></h2>
+			<p><%= school.address%></p>
+		</li>
+	<% end %>
+</ol>
