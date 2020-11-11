@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
 	resources :articles
 	resources :schools do 
 		resources :teachers, only: [:index, :new, :create]
