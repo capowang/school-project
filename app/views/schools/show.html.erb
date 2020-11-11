@@ -6,3 +6,9 @@
 <p>
 <%= @school.content %>
 </p>
+<% @school.teachers.each do |teacher| %>
+	<li>
+		<p><%= teacher.name%></p>
+		<p><%= teacher.description%></p>
+	</li>
+<% end %>
