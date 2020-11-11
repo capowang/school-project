@@ -18,6 +18,9 @@ User.destroy_all if Rails.env.development?
 
 for i in (1..10) do
 	Article.create!(title: "Title #{i}It might be a long long title", 
+		title_cn: "标题党#{i}",
+		subtitle_cn: "第二标题#{i}",
+		content_cn: "内容内容内容",
 		subtitle: "Subtitle is also really really really interesting",
 		content: "Michael Tidd, head teacher at East Preston Junior School in Sussex, said his allocation of laptops has been cut from 17 to three.
 Speaking to BBC Radio 4's Today programme, Mr Tidd said schools had been putting plans in place to meet the new remote learning legal duty.
