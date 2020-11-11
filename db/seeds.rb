@@ -12,6 +12,7 @@
 Teacher.destroy_all if Rails.env.development?
 Article.destroy_all if Rails.env.development?
 School.destroy_all if Rails.env.development?
+About.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 
 
@@ -59,6 +60,14 @@ for i in (1..10) do
 end
 
 
+About.create!(photo: ["https://www.brandeis.edu/gsas/admissions/images/campus-spring.jpg", 
+	"https://www.insidehighered.com/sites/default/server_files/media/Brandeis%20University.jpg",
+	"https://static.timesofisrael.com/www/uploads/2020/08/Carl_J_Shapiro_Science_Center_Brandeis_University_Waltham_MA-1024x640.jpg"
+], title: "Open English Studio", description: "Improve your English and live life to the full
+Being confident with your English can enhance your life in so many ways. It can improve your social life and career prospects, and can help you to explore the world more freely.
+As the world’s English experts we’re uniquely positioned to help you speak, listen, read and write with confidence so you can get the most out of your work and social life.
+We offer a wide range of flexible courses, so whether you’re an absolute beginner or want to develop your English skills and become an expert speaker, we’ve got the right course for you.
+")
 User.create!(password: "123456789", email: "vincent@gmail.com", admin: true)
 
 
