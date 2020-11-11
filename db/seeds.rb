@@ -12,6 +12,7 @@
 Teacher.destroy_all if Rails.env.development?
 Article.destroy_all if Rails.env.development?
 School.destroy_all if Rails.env.development?
+User.destroy_all if Rails.env.development?
 
 
 for i in (1..10) do
@@ -58,7 +59,7 @@ for i in (1..10) do
 end
 
 
-
+User.create!(password: "123456789", email: "vincent@gmail.com", admin: true)
 
 
 
