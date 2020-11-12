@@ -1,7 +1,15 @@
 <%= link_to "Back", root_path %>
 <h1>
-<%= @article.title %>
+<% if I18n.locale == I18n.default_locale %>
+	<%= @article.title %>
+<% else %>
+ 	<%= @article.title_cn %>
+<% end %>
 </h1>
 <p>
-<%= @article.content %>
+<% if I18n.locale == I18n.default_locale %>
+	<%= @article.content %>
+<% else %>
+ 	<%= @article.content_cn %>
+<% end %>
 </p>
