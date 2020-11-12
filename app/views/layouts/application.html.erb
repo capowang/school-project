@@ -18,6 +18,7 @@
     <% else %>
     <%= button_to 'Admin Login', new_user_session_path %>
     <% end %>
+    
     <% if I18n.locale == I18n.default_locale %>
         <%= link_to "中文", { :locale=>'cn' } %>
     <% else %>
@@ -26,10 +27,8 @@
     <p><%=link_to t('logo'), root_path%></p>
     <p><%=link_to t('school'), schools_path%></p>
     <p><%=link_to t('about'), abouts_path%></p>
-    
-    <p> 
-    <%=t("contact")%>
-    </p>
-    <%= yield %>
+    <p><%=link_to t("contact")%, contacts_path></p>
+
+  <%= yield %>
   </body>
 </html>

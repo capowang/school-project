@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	# 	resources :teachers, only: [:index]
 	# end
 	resources :abouts, only: [:index]
+	resources :contacts, only: [:index]
 	root to: "articles#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.htm
   end
