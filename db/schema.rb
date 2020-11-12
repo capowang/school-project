@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_11_105004) do
+ActiveRecord::Schema.define(version: 2020_11_12_010445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2020_11_11_105004) do
     t.text "photo", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title_cn"
+    t.string "description_cn"
   end
 
   create_table "articles", force: :cascade do |t|
@@ -42,6 +44,9 @@ ActiveRecord::Schema.define(version: 2020_11_11_105004) do
     t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title_cn"
+    t.string "address_cn"
+    t.text "content_cn"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -51,6 +56,8 @@ ActiveRecord::Schema.define(version: 2020_11_11_105004) do
     t.bigint "school_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name_cn"
+    t.string "description_cn"
     t.index ["school_id"], name: "index_teachers_on_school_id"
   end
 

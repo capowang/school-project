@@ -23,10 +23,13 @@
     <% else %>
         <%= link_to "English", { :locale=>'en' } %>
     <% end%>
-    <p><%=link_to 'logo', root_path%></p>
-    <p><%=link_to 'schools', schools_path%></p>
-    <p><%=link_to 'about', abouts_path%></p>
-    <p>contact</p>
+    <p><%=link_to t('logo'), root_path%></p>
+    <p><%=link_to t('school'), schools_path%></p>
+    <p><%=link_to t('about'), abouts_path%></p>
+    
+    <p> 
+    <%=t("contact")%>
+    </p>
     <%= yield %>
   </body>
 </html>
