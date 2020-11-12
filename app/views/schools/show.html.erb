@@ -1,14 +1,36 @@
 <%= link_to "Back", schools_path %>
-<h1>
-<%= @school.title %>
-<%= @school.address %>
-</h1>
-<p>
-<%= @school.content %>
-</p>
-<% @school.teachers.each do |teacher| %>
-	<li>
-		<p><%= teacher.name%></p>
-		<p><%= teacher.description%></p>
-	</li>
-<% end %>
+
+
+<% if I18n.locale == I18n.default_locale %>
+	<h1>
+		<%= @school.title %>
+		<%= @school.address %>
+	</h1>
+	<p>
+		<%= @school.content %>
+	</p>
+	<% @school.teachers.each do |teacher| %>
+		<li>
+			<p><%= teacher.name%></p>
+			<p><%= teacher.description%></p>
+		</li>
+	<% end %>
+<% else %>
+ 	<h1>
+		<%= @school.title_cn %>
+		<%= @school.address_cn %>
+	</h1>
+	<p>
+		<%= @school.content_cn %>
+	</p>
+	<% @school.teachers.each do |teacher| %>
+		<li>
+			<p><%= teacher.name_cn%></p>
+			<p><%= teacher.description_cn%></p>
+		</li>
+	<% end %>
+
+<% end%>
+
+
+

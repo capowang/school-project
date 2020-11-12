@@ -1,9 +1,18 @@
 <h1>
-<%= @about.title %>
+<% if I18n.locale == I18n.default_locale %>
+	<%= @about.title %>
+<% else %>
+ 	<%= @about.title_cn %>
+<% end %>
 </h1>
 <p>
-<%= @about.description %>
+<% if I18n.locale == I18n.default_locale %>
+	<%= @about.description %>
+<% else %>
+ 	<%= @about.description_cn %>
+<% end %>
 </p>
+
 <% for i in @about.photo %>
 	<img src= i alt="pic">
 <% end %>

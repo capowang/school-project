@@ -42,6 +42,9 @@ end
 
 for i in (1..10) do
 	School.create!(title: "School#{i}",
+		title_cn: "学校#{i}",
+		address_cn: "地址#{i}",
+		content_cn: "内容#{i}",
 		address: "Huanan Beilu Gogokid",
 		content: "Brandeis University /ˈbrændaɪs/ is a private research university located in the Boston suburb of Waltham, Massachusetts. Founded in 1948 as a non-sectarian, 
 		coeducational institution sponsored by the Jewish community, Brandeis was 
@@ -58,6 +61,8 @@ for i in (1..10) do
 	Teacher.create!(photo: "https://n.sinaimg.cn/translate/799/w2000h1999/20181020/XOB4-hmrasqs8182270.jpg",
 		name: "Teacher#{i}",
 		description: "He is a great teacher",
+		name_cn: "名字#{i}",
+		description_cn: "描述#{i}",
 		school_id: School.first.id
 		)
 end
@@ -66,7 +71,10 @@ end
 About.create!(photo: ["https://www.brandeis.edu/gsas/admissions/images/campus-spring.jpg", 
 	"https://www.insidehighered.com/sites/default/server_files/media/Brandeis%20University.jpg",
 	"https://static.timesofisrael.com/www/uploads/2020/08/Carl_J_Shapiro_Science_Center_Brandeis_University_Waltham_MA-1024x640.jpg"
-], title: "Open English Studio", description: "Improve your English and live life to the full
+], title: "Open English Studio", 
+title_cn: "开放英语",
+description_cn: "这里是描述",
+description: "Improve your English and live life to the full
 Being confident with your English can enhance your life in so many ways. It can improve your social life and career prospects, and can help you to explore the world more freely.
 As the world’s English experts we’re uniquely positioned to help you speak, listen, read and write with confidence so you can get the most out of your work and social life.
 We offer a wide range of flexible courses, so whether you’re an absolute beginner or want to develop your English skills and become an expert speaker, we’ve got the right course for you.

@@ -1,8 +1,17 @@
 <ol>
 	<% @schools.each do |school| %>
 		<li>
-			<h2><%= link_to school.title, school_path(school) %></h2>
-			<p><%= school.address%></p>
+			<% if I18n.locale == I18n.default_locale %>
+				
+				<h2><%= link_to school.title, school_path(school) %></h2>
+				<p><%= school.address%></p>			
+
+				<% else %>
+ 				
+ 				<h2><%= link_to school.title_cn, school_path(school) %></h2>
+				<p><%= school.address_cn%></p>	
+				
+			<% end %>
 		</li>
 	<% end %>
 </ol>
