@@ -13,6 +13,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    
     <% if user_signed_in? %>
     <%= button_to 'Exit', destroy_user_session_path, method: :delete %>
     <% else %>
@@ -27,7 +28,7 @@
     <p><%=link_to t('logo'), root_path%></p>
     <p><%=link_to t('school'), schools_path%></p>
     <p><%=link_to t('about'), abouts_path%></p>
-    <p><%=link_to t("contact")%, contacts_path></p>
+    <p><%=link_to t("contact"), contacts_path%></p>
 
   <%= yield %>
   </body>
