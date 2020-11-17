@@ -29,6 +29,9 @@ gem 'rails_admin', '>= 1.0.0.rc'
 
 gem 'geocoder'
 
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
+
 
 
 # Use Active Storage variant
