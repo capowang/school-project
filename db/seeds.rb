@@ -36,16 +36,16 @@ students schools typically have self-isolating, ensuring as many children as pos
 		)
 end
 
-
+location = ["Shanghai Museum, Shanghai", "Yu Garden, Shanghai, Shanghai", "China Art Museum, Shanghai"]
 
 # then you should begin to build more schools and the teachers
 
-for i in (1..10) do
+for i in (1..3) do
 	School.create!(title: "School#{i}",
 		title_cn: "学校#{i}",
+		address: location[i - 1],
 		address_cn: "地址#{i}",
 		content_cn: "内容#{i}",
-		address: "Huanan Beilu Gogokid",
 		content: "Brandeis University /ˈbrændaɪs/ is a private research university located in the Boston suburb of Waltham, Massachusetts. Founded in 1948 as a non-sectarian, 
 		coeducational institution sponsored by the Jewish community, Brandeis was 
 		established on the site of the former Middlesex University. The university is named after Louis Brandeis, the first Jewish Justice of the U.S. Supreme Court.
