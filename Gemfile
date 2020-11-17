@@ -27,6 +27,8 @@ gem 'jquery-rails'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 
+gem 'geocoder'
+
 
 
 # Use Active Storage variant

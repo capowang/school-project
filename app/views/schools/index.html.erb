@@ -1,4 +1,32 @@
-<ol>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+<div id='map' style='width: 600px; height: 300px;' data-markers="<%= @markers%>"></div>
+<script>
+
+setTimeout(() => {
+	mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fwb3dhbmciLCJhIjoiY2tjeTg2MnV2MDdjbTJ4cGtnaG9lb2p3cCJ9.9Lh3xU1oXA8qfpgOm1k86A';
+		var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+		center: [121.473701, 31.230391], // starting position [lng, lat]
+		zoom: 9 // starting zoom
+		});
+
+		var markers = JSON.parse(document.getElementById("map").dataset.markers);
+
+		markers[0].forEach((marker) => {
+		 var marker = new mapboxgl.Marker()
+		.setLngLat([marker[1], marker[0]])
+		.addTo(map);
+		})
+
+    }, 100)
+
+</script>
+
+
+
+ <ol>
 	<% @schools.each do |school| %>
 		<li>
 			<% if I18n.locale == I18n.default_locale %>
@@ -15,3 +43,4 @@
 		</li>
 	<% end %>
 </ol>
+
