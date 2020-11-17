@@ -1,5 +1,9 @@
 <%= link_to "Back", schools_path %>
 
+<% @school.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 
 <% if I18n.locale == I18n.default_locale %>
 	<h1>
@@ -13,6 +17,7 @@
 		<li>
 			<p><%= teacher.name%></p>
 			<p><%= teacher.description%></p>
+			<%= cl_image_tag teacher.photo.key, height: 300, width: 400, crop: :fill %>
 		</li>
 	<% end %>
 <% else %>

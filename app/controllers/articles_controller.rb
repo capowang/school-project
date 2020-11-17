@@ -15,6 +15,6 @@ class ArticlesController < ApplicationController
 	end
 
 	def article_attributes
-		params.require(:article).permit(:title, :subtitle, :content, :photo)
+		params.require(:article).permit(:title, :subtitle, :content, photos: [])
 	end
 end
