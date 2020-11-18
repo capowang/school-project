@@ -14,6 +14,28 @@
 <% end %>
 </p>
 
-<% @article.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<% if @article.photo1.attached? %>
+  <%= cl_image_tag @article.photo1.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+ <% if @article.photo2.attached? %>
+  <%= cl_image_tag @article.photo2.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+ <% if @article.photo3.attached? %>
+  <%= cl_image_tag @article.photo3.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+ <% if @article.photo4.attached? %>
+  <%= cl_image_tag @article.photo4.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+<% if @article.photo5.attached? %>
+  <%= cl_image_tag @article.photo5.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+ <% if @article.photo6.attached? %>
+  <%= cl_image_tag @article.photo6.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+ <% if @article.photo7.attached? %>
+  <%= cl_image_tag @article.photo7.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+ <% if @article.photo8.attached? %>
+  <%= cl_image_tag @article.photo8.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+
