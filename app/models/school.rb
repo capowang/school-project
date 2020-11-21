@@ -11,4 +11,8 @@ class School < ApplicationRecord
 	validates :title, :address, :content, :title_cn, :address_cn, :content_cn, presence: true
 	geocoded_by :address_cn
   	after_validation :geocode, if: :will_save_change_to_address_cn?
-end
+
+  	rails_admin do
+    	exclude_fields :longitude, :latitude
+  	end
+  end

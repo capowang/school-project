@@ -16,6 +16,7 @@
     
     <% if user_signed_in? %>
     <%= button_to 'Exit', destroy_user_session_path, method: :delete %>
+    <a href="/admin">Admin Dashboard</a>
     <% else %>
     <%= button_to 'Admin Login', new_user_session_path %>
     <% end %>
