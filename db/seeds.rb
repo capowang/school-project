@@ -31,34 +31,30 @@ User.destroy_all if Rails.env.development?
 # The DfE calculates the number of devices available to schools based on the number of children in years 3 to 11, free school meals data and how many devices a school already has.
 # It said more than 340,000 laptops and tablets were being made available to schools this term to support disadvantaged children, with deliveries expected to total half a million by Christmas.
 # A DfE spokesperson said: ‘As we move into half term, and in the context of significant global demand, we're updating our allocation process to more accurately align orders with the number of 
-# students schools typically have self-isolating, ensuring as many children as possible benefit from receiving a device this term.We have already purchased an additional 96,000 devices and continue to work closely with our suppliers to ensure delivery despite the increased global demand.’",
-# 		photo: "https://www.pittstate.edu/education/_files/images/spedhl-1280x850.jpg"
-# 		)
+# students schools typically have self-isolating, ensuring as many children as possible benefit from receiving a device this term.We have already purchased an additional 96,000 devices and continue to work closely with our suppliers to ensure delivery despite the increased global demand.’")
 # end
 
-# location = ["Shanghai Museum, Shanghai", "Yu Garden, Shanghai, Shanghai", "China Art Museum, Shanghai"]
+location = ["上海市浦东新区杨高中路天物空间B栋303", "上海市浦东新区黄杨路6号中国六三楼", "上海市浦东新区秀沿路1670弄1号锦科文化产业园A座3A02室", "上海市青浦区朱家角路396号"]
 
-# then you should begin to build more schools and the teachers
 
-# for i in (1..3) do
-# 	School.create!(title: "School#{i}",
-# 		title_cn: "学校#{i}",
-# 		address: location[i - 1],
-# 		address_cn: "地址#{i}",
-# 		content_cn: "内容#{i}",
-# 		content: "Brandeis University /ˈbrændaɪs/ is a private research university located in the Boston suburb of Waltham, Massachusetts. Founded in 1948 as a non-sectarian, 
-# 		coeducational institution sponsored by the Jewish community, Brandeis was 
-# 		established on the site of the former Middlesex University. The university is named after Louis Brandeis, the first Jewish Justice of the U.S. Supreme Court.
-# In 2018, it had a total enrollment of 5,800 students on its suburban campus spanning 235 acres (95 hectares).[4] The institution offers more than 43 majors and 46 minors, and two-thirds 
-# of undergraduate classes have 20 students or fewer.",
-# 		photo: "http://image.liuxue360.com/2016/03/26/20160326153257969.jpg"
-# 		)	
-# end
+for i in (1..4) do
+	School.create!(title: "School#{i}",
+		title_cn: "学校#{i}",
+		address: "location#{i}",
+		address_cn: location[i - 1],
+		content_cn: "内容#{i}",
+		content: "Brandeis University /ˈbrændaɪs/ is a private research university located in the Boston suburb of Waltham, Massachusetts. Founded in 1948 as a non-sectarian, 
+		coeducational institution sponsored by the Jewish community, Brandeis was 
+		established on the site of the former Middlesex University. The university is named after Louis Brandeis, the first Jewish Justice of the U.S. Supreme Court.
+In 2018, it had a total enrollment of 5,800 students on its suburban campus spanning 235 acres (95 hectares).[4] The institution offers more than 43 majors and 46 minors, and two-thirds 
+of undergraduate classes have 20 students or fewer."
+		)	
+end
 
 
 
 # for i in (1..10) do 
-# 	Teacher.create!(photo: "https://n.sinaimg.cn/translate/799/w2000h1999/20181020/XOB4-hmrasqs8182270.jpg",
+# 	Teacher.create!(
 # 		name: "Teacher#{i}",
 # 		description: "He is a great teacher",
 # 		name_cn: "名字#{i}",
