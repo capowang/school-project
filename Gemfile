@@ -32,6 +32,9 @@ gem 'geocoder'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 
+group :production do
+  gem 'rails_12factor'
+end
 
 
 # Use Active Storage variant
