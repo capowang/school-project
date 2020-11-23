@@ -5,7 +5,7 @@ GIT
     remotipart (1.4.4)
 
 GEM
-  remote: https://rubygems.org/
+  remote: https://gems.ruby-china.com/
   specs:
     actioncable (6.0.3.4)
       actionpack (= 6.0.3.4)
