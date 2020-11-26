@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # seed the database, goal, schools,teachers, articles.
+require "open-uri"
 
 # first do the articles, at least 10 articles, all be the same
 Teacher.destroy_all if Rails.env.development?
@@ -35,10 +36,12 @@ User.destroy_all if Rails.env.development?
 # end
 
 location = ["上海市浦东新区杨高中路天物空间B栋303", "上海市浦东新区黄杨路6号中国六三楼", "上海市浦东新区秀沿路1670弄1号锦科文化产业园A座3A02室", "上海市青浦区朱家角路396号"]
+photo1_list = ["https://specials-images.forbesimg.com/imageserve/1214288769/960x0.jpg", "https://specials-images.forbesimg.com/imageserve/5f17cf50107158000722ca31/960x0.jpg",
+"https://image.stern.de/9235592/t/d7/v3/w1440/r1.7778/-/harvard-universitaet.jpg", "https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/HBS.png"]
 
-
+school_photo_count = 0
 for i in (1..4) do
-	School.create!(title: "School#{i}",
+	school = School.create!(title: "School#{i}",
 		title_cn: "学校#{i}",
 		address: "location#{i}",
 		address_cn: location[i - 1],
@@ -48,10 +51,11 @@ for i in (1..4) do
 		established on the site of the former Middlesex University. The university is named after Louis Brandeis, the first Jewish Justice of the U.S. Supreme Court.
 In 2018, it had a total enrollment of 5,800 students on its suburban campus spanning 235 acres (95 hectares).[4] The institution offers more than 43 majors and 46 minors, and two-thirds 
 of undergraduate classes have 20 students or fewer."
-		)	
+		)
+	photo = URI.open(photo1_list[i - 1])
+	school_photo_count += 1
+	school.photo1.attach(io: photo, filename: "school_photo#{school_photo_count}.png", content_type: 'image/png')
 end
-
-
 
 # for i in (1..10) do 
 # 	Teacher.create!(
