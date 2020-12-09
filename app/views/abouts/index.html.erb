@@ -13,7 +13,16 @@
 <% end %>
 </p>
 
-<% for i in @about.photo %>
-	<img src= "<%= i %>" alt="school">
-<% end %>
 
+<% if @about.photo1.attached? %>
+  <%= cl_image_tag @about.photo1.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+ <% if @about.photo2.attached? %>
+  <%= cl_image_tag @about.photo2.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+ <% if @about.photo3.attached? %>
+  <%= cl_image_tag @about.photo3.key, height: 300, width: 400, crop: :fill %>
+ <% end %>
+ <% if @about.photo4.attached? %>
+  <%= cl_image_tag @about.photo4.key, height: 300, width: 400, crop: :fill %>
+ <% end %>

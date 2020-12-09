@@ -1,6 +1,5 @@
 <h1>
 <%= t("hello") %>
-<%= t("goodbye") %>
 </h1>
 <ol>
 	<% @articles.each do |article| %>
@@ -12,6 +11,9 @@
 				<h2><%= link_to article.title_cn, article_path(article) %></h2>
 				<p><%= article.title_cn%></p>
     		<% end%>
+    		<% if article.photo1.attached? %>
+  				<%= cl_image_tag article.photo1.key, height: 300, width: 400, crop: :fill %>
+ 			<% end %>
 			
 	<% end %>
 </ol>
