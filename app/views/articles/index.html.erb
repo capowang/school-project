@@ -1,6 +1,11 @@
-<h1>
-<%= t("hello") %>
-</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>We brings<strong> English education</strong> to <strong>the next generation</strong>!</h1>
+    <p>Changing lives and building opportunities</p>
+	 <a class="btn btn-outline-warning" href="<%=contacts_path%>">Contact Us</a>
+	  </div>
+</div>
+
 <ol>
 	<% @articles.each do |article| %>
 		<li>
@@ -17,3 +22,12 @@
 			
 	<% end %>
 </ol>
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Stitch_%28Lilo_%26_Stitch%29.svg/1200px-Stitch_%28Lilo_%26_Stitch%29.svg.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
