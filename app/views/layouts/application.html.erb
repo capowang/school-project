@@ -4,7 +4,8 @@
     <title>SchoolProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,23 +15,32 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
-    <% if user_signed_in? %>
-    <%= button_to 'Exit', destroy_user_session_path, method: :delete %>
-    <a href="/admin">Admin Dashboard</a>
-    <% else %>
-    <%= button_to 'Admin Login', new_user_session_path %>
-    <% end %>
-    
-    <% if I18n.locale == I18n.default_locale %>
-        <%= link_to "中文", { :locale=>'cn' } %>
-    <% else %>
-        <%= link_to "English", { :locale=>'en' } %>
-    <% end%>
-    <p><%=link_to t('logo'), root_path%></p>
-    <p><%=link_to t('school'), schools_path%></p>
-    <p><%=link_to t('about'), abouts_path%></p>
-    <p><%=link_to t("contact"), contacts_path%></p>
+    <div class="d-flex justify-content-between align-items-center container pb-3">
+        <a href="<%=root_path %>"><%= image_tag "logos/logo.png", alt: "Le Wagon", width: 100, class: "logo"%></a>
+        <div class= "d-flex justify-content-between">
+            <% if user_signed_in? %>
+                <%= button_to 'Exit', destroy_user_session_path, method: :delete %>
+                <a class= "pr-3 pl-3" href="/admin">Admin Dashboard</a>
+            <% else %>
+                <div class="pr-3">
+                <%= button_to 'Admin Login', new_user_session_path %>
+                </div>
+            <% end %>
+            <% if I18n.locale == I18n.default_locale %>
+                <%= link_to "中文", { :locale=>'cn' } %>
+            <% else %>
+                <%= link_to "English", { :locale=>'en' } %>
+            <% end%>    
+            <p class="pr-3 pl-3"><%=link_to t('school'), schools_path%></p>
+            <p class="pr-3"><%=link_to t('about'), abouts_path%></p>
+            <p class="pr-3"><%=link_to t("contact"), contacts_path%></p>
+        </div>
+    </div>
 
   <%= yield %>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>

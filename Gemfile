@@ -32,6 +32,9 @@ gem 'geocoder'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 
+gem 'font-awesome-sass', '~> 5.6.1'
+gem 'autoprefixer-rails'
+
 group :production do
   gem 'rails_12factor'
 end
