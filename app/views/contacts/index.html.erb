@@ -8,63 +8,61 @@
 
 
 <body>
-  <h2>Contact Us</h2>
-  
-  <i class="fab fa-weixin"></i>
-  <a href="https://www.facebook.com/" target="_blank"> 
-    <i class="fab fa-facebook-square"></i>
-  </a>
-
-<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xpzolqld" method="post">
-<fieldset id="fs-frm-inputs">
-
-  <div class="form-row">
-    <div class="form-group col-md-2">
-      <label for="last-name">Last Name</label>
-      <input type="text" name="Last Name" class="form-control" id="last-name" placeholder="Last Name">
-    </div>
-    <div class="form-group col-md-2">
-      <label for="first-name">First Name</label>
-      <input type="text" name="First Name" class="form-control" id="first-name" placeholder="First Name">
-    </div>
-  <div class="form-group">
-    <label for="email-address">Email Address</label>
-    <input type="email" name="Email" class="form-control" id="email-address" placeholder="email@domain.tld" required="">
-  </div>
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea rows="5" name="Message" id="message" class="form-control" placeholder="I am interested to teach in OpenEnglish Studio" required=""></textarea>
-  </div>
-
-    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-</fieldset>
-  <input type="submit" value="Submit" class="btn btn-primary">
-</form>
-<!-- 
-
-
-  <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xpzolqld" method="post">
-  <fieldset id="fs-frm-inputs">
-    <label for="full-name">Full Name</label>
-    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
-    
-    <label for="email-address">Email Address</label>
-    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-    
-    <label for="message">Message</label>
-    <textarea rows="5" name="message" id="message" placeholder="I am interested to teach in OpenEnglish Studio" required=""></textarea>
-    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-  </fieldset>
-  <input type="submit" value="Submit">
-</form>
-
-
+<!-- d-flex justify-content-center
  -->
 
+<div class="d-flex justify-content-center mt-5">
 
-</body>
+  <div class="blue-background contact-color contact-form pr-5 pl-5 pt-4">
+    <h2  style="padding-bottom: 120px; font-size: 24px">Contact us</h2>
+    <div class="d-flex justify-content-around "style="padding-top: 200px">
+    <i class="fab fa-weixin icon-size" ></i>
+    <a href="https://www.facebook.com/" target="_blank"> 
+      <i class="fab fa-facebook-square contact-color icon-size"></i>
+    </a>
+    </div>
+  </div>
 
-</html>
+  <div class="move-form bg-white pr-4 pt-4 pb-4 contact-form">
+   <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xpzolqld" method="post" >
+    <fieldset id="fs-frm-inputs" >
+      <div class="form-row ">
+        <div class="form-group col-md-6">
+          <label for="last-name" class="remove-bottom">Last Name</label>
+          <input type="text" name="Last Name" class="form-control" id="last-name" placeholder="Last Name">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="first-name"  class="remove-bottom">First Name</label>
+          <input type="text" name="First Name" class="form-control" id="first-name" placeholder="First Name">
+        </div>
+      </div>
+
+      <div class="form-group ">
+        <label for="email-address"  class="remove-bottom">Email Address</label>
+        <input type="email" name="Email" class="form-control" id="email-address" placeholder="email@domain.tld" required="">
+      </div>
+      <div class="form-group">
+        <label for="message" class="remove-bottom">Message</label>
+        <textarea rows="5" name="Message" id="message" class="form-control" placeholder="I am interested to teach in OpenEnglish Studio" required=""></textarea>
+      </div>
+
+      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+    </fieldset>
+
+    <input style="float:right;" type="submit" value="Submit" class="btn btn-primary move-button-left mt-4">
+  </form>
+  </div>
+
+</div>
+
+<body>
+
+
+
+
+
+
 
 
 
