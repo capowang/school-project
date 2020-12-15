@@ -1,7 +1,5 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-<div id='map' style='width: 600px; height: 300px;' data-markers="<%= @markers%>"></div>
-
 <script>
 
 setTimeout(() => {
@@ -22,26 +20,36 @@ setTimeout(() => {
 		})
 
     }, 100)
-
+///eight: 160, width: 286, crop: :fill,
 </script>
 
-
-
- <ol>
-	<% @schools.each do |school| %>
-		<li>
-			<% if I18n.locale == I18n.default_locale %>
-				
-				<h2><%= link_to school.title, school_path(school) %></h2>
-				<p><%= school.address%></p>			
-
-				<% else %>
- 				
- 				<h2><%= link_to school.title_cn, school_path(school) %></h2>
-				<p><%= school.address_cn%></p>	
-				
+	<div class="container map-flex">
+		
+		<div class="school-cards pr-3">
+			<% @schools.each do |school| %>
+					<div class="card" style="width: 18rem;">
+					  		<% if school.photo1.attached? %>
+								<%= cl_image_tag school.photo1.key, height: 160, width: 286, crop: :fill %>
+							<% end %>
+					  <div class="card-body">
+					  	<% if I18n.locale == I18n.default_locale %>
+						    <h5 class="card-title"><%= link_to school.title, school_path(school)%></h5>
+						    <p class="card-text"><%= school.address%></p>
+					   	<% else %>
+						    <h5 class="card-title"><%= link_to school.title_cn, school_path(school)%></h5>
+						    <p class="card-text"><%= school.address_cn%></p>
+						<% end %>
+					  </div>
+					</div>
 			<% end %>
-		</li>
-	<% end %>
-</ol>
+		</div>
+
+		<div id='map' style='width: 400px; height: 560px;' data-markers="<%= @markers%>"></div>
+
+	</div>
+
+
+
+
+
 
