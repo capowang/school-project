@@ -13,7 +13,7 @@ COPY Gemfile* /tmp/
 COPY package.json /tmp/
 COPY yarn.lock /tmp/
 WORKDIR /tmp
-RUN gem install bundler -v 2.2.4
+RUN gem install bundler -v 2.0.2
 RUN bundle install --jobs 5 --retry 5 --without development test
 # RUN yarn install
 RUN mkdir /app
