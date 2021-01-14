@@ -22,7 +22,7 @@ User.destroy_all if Rails.env.development?
 article_photo_list = ["https://specials-images.forbesimg.com/imageserve/1214288769/960x0.jpg", "https://specials-images.forbesimg.com/imageserve/5f17cf50107158000722ca31/960x0.jpg",
 "https://image.stern.de/9235592/t/d7/v3/w1440/r1.7778/-/harvard-universitaet.jpg", "https://poetsandquants.com/wp-content/uploads/sites/5/2019/05/HBS.png"]
 
-for i in (1..10) do
+for i in (1..3) do
 	Article.create!(title_cn: "美国会通过法案，在美上市中企面临更多审查", title: "Chinese Companies to Face More Scrutiny as Bill Clears House
 ", 
 subtitle: "OLIVER CONTRERAS FOR THE NEW YORK TIMES", subtitle_cn: "纽约时报奥利弗", 
@@ -131,7 +131,7 @@ description_cn = [
 "卡铂是个好老师", "艾剖是个好老师", "文森特是个好老师", 
 "辛提是个好老师", "孔蒂是个好老师", "阿瑞安是个好老师", 
 "阿弱安是个好老师"]
-for i in (1..8) do
+for i in (1..3) do
 	teacher_photo = URI.open("https://www.brandeis.edu/sociology/images/faculty/headshots/rosenberger-chandler.jpg")
 	teacher = Teacher.create!(name: name[i - 1], description: description[i - 1], 
 	name_cn: name_cn[i - 1], school: School.first, description_cn: description_cn[i - 1])
