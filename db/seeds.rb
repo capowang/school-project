@@ -111,10 +111,10 @@ School.first.photo2.attach(io: URI.open(school_photo_list[1]),
 filename: "school_photo2.png", content_type: 'image/png')
 
 School.first.photo3.attach(io: URI.open(school_photo_list[2]), 
-filename: "school_photo1.png", content_type: 'image/png')
+filename: "school_photo3.png", content_type: 'image/png')
 
 School.first.photo4.attach(io: URI.open(school_photo_list[3]), 
-filename: "school_photo2.png", content_type: 'image/png')
+filename: "school_photo4.png", content_type: 'image/png')
 
 
 
