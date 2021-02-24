@@ -1,11 +1,72 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1>We brings<strong> English education</strong> to <strong>the next generation</strong>!</h1>
-    <p>Changing lives and building opportunities</p>
-	 <a class="btn btn-outline-warning" href="<%=contacts_path%>">Contact Us</a>
-	  </div>
-</div>
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <%= yield %>
+<div class= flex-container-1>
+      <div class="text-item-2">
+        <h1 style="color: #01255B"><strong>Changing <span style="color: #E67E22"> lives </span>and<br>building<span< style="color: #E67E22"> opportunites </span></strong></h1>
+        <p style="color: #00337E">Leading the way in ESL edcuation,<br>for more information contact us today.</p>
+         <a class="btn btn-outline-warning" style="margin-top:30px" href="<%=contacts_path%>"><strong>Contact us</strong></a>
+      </div>
+        <div>
+          <%=image_tag "index/teacher-lg.png" , class: "first_image" %>
+        </div>
+      </div>
+    </div>
+      <div class="video-section">
+          <%= video_tag "",
+           autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+      </div>
+      <div class= flex-container-2>
+        <div class="text-item-2">
+        <h1 style="color: #01255B"><strong>With schools<br>throughout<span style="color: #E67E22"> Shanghai</span></strong></h1>
+        <p style="color: #00337E">Find out more about our schools.</p>
+        <a class="btn btn-outline-warning" style="margin-top:30px" href="<%=contacts_path%>"><strong>Find out more</strong></a>
+      </div>
+        <div>
+          <%=image_tag "index/school.png" , class: "second_image" %>
+        </div>
+      </div>
+    </div>
+    <div class= flex-container-3>
+      <div>
+        <%=image_tag "index/news.png" , class: "third_image" %>
+      </div>
+      <div class="text-item-2">
+        <h1 style="color: #01255B"><strong>Catch up on our<span style="color: #E67E22"> lastest <br> news</span> and events</strong></h1>
+        <p style="color: #00337E">Read more on the lastest news<br>and information at Open English.</p>
+        <a class="btn btn-outline-warning" style="margin-top:30px" href="<%=contacts_path%>"><strong>Find out more</a>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <ol>
 	<% @articles.each do |article| %>
 		<li>
@@ -19,7 +80,7 @@
     		<% if article.photo1.attached? %>
   				<%= cl_image_tag article.photo1.key, height: 300, width: 400, crop: :fill %>
  			<% end %>
-			
+
 	<% end %>
 </ol>
 

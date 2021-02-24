@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SchoolProject</title>
+    <title>Open English Studio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +14,8 @@
   <body>
 <!--     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
-    
-    <div class=" bg-white"> 
+
+    <div class=" bg-white">
     <div class="d-flex justify-content-between align-items-center container pb-3">
         <a href="<%=root_path %>"><%= image_tag "logos/logo.png", alt: "Le Wagon", width: 100, class: "logo"%></a>
         <div class= "d-flex justify-content-between">
@@ -31,7 +31,7 @@
                 <%= link_to "中文", { :locale=>'cn' } %>
             <% else %>
                 <%= link_to "English", { :locale=>'en' } %>
-            <% end%>    
+            <% end%>
             <p class="pr-3 pl-3"><%=link_to t('school'), schools_path%></p>
             <p class="pr-3"><%=link_to t('about'), abouts_path%></p>
             <p class="pr-3"><%=link_to t("contact"), contacts_path%></p>
