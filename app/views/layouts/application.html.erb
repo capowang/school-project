@@ -12,14 +12,53 @@
   </head>
 
   <body>
-<!--     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
 
-    <div class=" bg-white">
-    <div class="d-flex justify-content-between align-items-center container pb-3">
-        <a href="<%=root_path %>"><%= image_tag "logos/logo.png", alt: "Le Wagon", width: 100, class: "logo"%></a>
-        <div class= "d-flex justify-content-between">
-            <% if user_signed_in? %>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" style="background-color: #ffff;">
+   <a class="navbar-brand" href="<%=root_path %>"><%= image_tag "logos/logo.png", width: 200 , class: "logo"%> </a>
+  <button class="navbar-toggler" style="height: 60px" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <p class="nav-link" ><%=link_to t('Schools'), schools_path%></p>
+      </li>
+      <li class="nav-item active">
+        <p class="nav-link"><%=link_to t('News'), schools_path%></p>
+      </li>
+      <li class="nav-item active">
+       <p class="nav-link"><%=link_to t('about'), abouts_path%></p>
+      </li>
+      <li class="nav-item active">
+        <p class="nav-link"><%=link_to t("contact"), contacts_path%></p>
+      </li>
+      <li>
+        <p class=nav-link>
+          <% if I18n.locale == I18n.default_locale %>
+            <%= link_to "中文", { :locale=>'cn' } %>
+              <% else %>
+            <%= link_to "English", { :locale=>'en' } %>
+            <% end%>
+        </p>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <%= yield %>
+
+  </body>
+</html>
+
+
+
+ <!--<% if user_signed_in? %>
                 <%= button_to 'Exit', destroy_user_session_path, method: :delete %>
                 <a class= "pr-3 pl-3" href="/admin">Admin Dashboard</a>
             <% else %>
@@ -27,6 +66,16 @@
                 <%= button_to 'Admin Login', new_user_session_path %>
                 </div>
             <% end %>
+
+
+
+
+
+    <!--<div class=" bg-black">
+    <div class="d-flex justify-content-between align-items-center container pb-3">
+        <a href="<%=root_path %>"><%= image_tag "logos/logo.png", alt: "Le Wagon", width: 100, class: "logo"%></a>
+        <div class= "d-flex justify-content-between">
+
             <% if I18n.locale == I18n.default_locale %>
                 <%= link_to "中文", { :locale=>'cn' } %>
             <% else %>
@@ -39,10 +88,5 @@
     </div>
     </div>
 
-  <%= yield %>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
-</html>
+
