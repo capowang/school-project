@@ -2,7 +2,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <style>
       /* Email styles need to be inline */
     </style>
@@ -46,24 +54,8 @@
         <a class="btn btn-outline-warning" style="margin-top:30px" href="<%=contacts_path%>"><strong>Find out more</a>
       </div>
     </div>
-
-
-
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!--
