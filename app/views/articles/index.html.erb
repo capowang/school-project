@@ -18,21 +18,26 @@
 
   <body>
     <%= yield %>
-<div class= flex-container-1>
-      <div class="text-item-2">
+    <div class="container-1">
+
+      <div class="text-item">
         <h1 style="color: #01255B"><strong>Changing <span style="color: #E67E22"> lives </span>and<br>building<span< style="color: #E67E22"> opportunites </span></strong></h1>
         <p style="color: #00337E">Leading the way in ESL edcuation,<br>for more information contact us today.</p>
          <a class="btn btn-outline-warning" style="margin-top:30px" href="<%=contacts_path%>"><strong>Contact us</strong></a>
       </div>
         <div>
-          <%=image_tag "index/teacher-lg.png" , class: "first_image" %>
+          <%=image_tag "index/teacher-lg.png" , class: "teacher" %>
         </div>
-      </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="wave" viewBox="0 0 4709 3168"><defs><style>.a{fill:#f0f8ff;}.b{fill:#fefefe;}</style></defs><path class="a" d="M2354.5,2107.06c-119.61,76.2-217.15,143.67-324.19,200C949.52,2875.59,0,2436.4,0,2436.4V3168H4709V1949.87S3537,1353.73,2354.5,2107.06Z"/><path class="b" d="M2354.5,2387.37c-119.61,56.07-217.15,105.72-324.19,147.15C949.52,2952.85,0,2629.7,0,2629.7V3168H4709V2271.72S3537,1833.09,2354.5,2387.37Z"/></svg>
+
+    </div>
+
     </div>
       <div class="video-section">
           <%= video_tag "",
            autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
       </div>
+
       <div class= flex-container-2>
         <div class="text-item-2">
         <h1 style="color: #01255B"><strong>With schools<br>throughout<span style="color: #E67E22"> Shanghai</span></strong></h1>
