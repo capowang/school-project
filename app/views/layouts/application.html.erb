@@ -12,40 +12,28 @@
   </head>
 
   <body>
+<header class="header">
+    <nav class="navbar navbar-expand-lg top py-3">
+        <div class="container"><a href="<%=root_path %>"><%= image_tag "logos/open-logo.png", alt: "Le Wagon", width: 100, class: "logo"%></a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
 
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" style="background-color: #ffff;">
-   <a class="navbar-brand" href="<%=root_path %>"><%= image_tag "logos/logo.png", width: 200 , class: "logo"%> </a>
-  <button class="navbar-toggler" style="height: 60px" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <p class="nav-link" ><%=link_to t('Schools'), schools_path%></p>
-      </li>
-      <li class="nav-item active">
-        <p class="nav-link"><%=link_to t('News'), schools_path%></p>
-      </li>
-      <li class="nav-item active">
-       <p class="nav-link"><%=link_to t('about'), abouts_path%></p>
-      </li>
-      <li class="nav-item active">
-        <p class="nav-link"><%=link_to t("contact"), contacts_path%></p>
-      </li>
-      <li>
-        <p class=nav-link>
-          <% if I18n.locale == I18n.default_locale %>
-            <%= link_to "中文", { :locale=>'cn' } %>
-              <% else %>
-            <%= link_to "English", { :locale=>'en' } %>
-            <% end%>
-        </p>
-      </li>
-    </ul>
-  </div>
-</nav>
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><h5 class="nav-link text-uppercase font-weight-bold"><%=link_to t('schools'),schools_path%></h5></li>
+                    <li class="nav-item"><h5 class="nav-link text-uppercase font-weight-bold"><%=link_to t('news'), abouts_path%></h5></li>
+                    <li class="nav-item"><h5 class="nav-link text-uppercase font-weight-bold"><%=link_to t('about'), abouts_path%></h5></li>
+                    <li class="nav-item"><h5 class="nav-link text-uppercase font-weight-bold"><%=link_to t('contact'), contacts_path%></h5></li>
+                    <li class="nav-item"><h5 class="nav-link text-uppercase font-weight-bold">
+                      <% if I18n.locale == I18n.default_locale %>
+                       <%= link_to "中文", { :locale=>'cn' } %>
+                        <% else %>
+                      <%= link_to "English", { :locale=>'en' } %>
+                      <% end%>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -87,6 +75,42 @@
         </div>
     </div>
     </div>
+
+<!<div class="navbar-wrapper">
+<div class="container fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-sticky-top fluid" style="background-opacity: 0;">
+   <a class="navbar-brand" href="<%=root_path %>"><%= image_tag "logos/logo.png", width: 200 , class: "logo"%> </a>
+  <button class="navbar-toggler" style="height: 60px" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <p class="nav-link" ><%=link_to t('Schools'), schools_path%></p>
+      </li>
+      <li class="nav-item active">
+        <p class="nav-link"><%=link_to t('News'), schools_path%></p>
+      </li>
+      <li class="nav-item active">
+       <p class="nav-link"><%=link_to t('About'), abouts_path%></p>
+      </li>
+      <li class="nav-item active">
+        <p class="nav-link"><%=link_to t("Contact"), contacts_path%></p>
+      </li>
+      <li>
+        <p class=nav-link>
+          <% if I18n.locale == I18n.default_locale %>
+            <%= link_to "中文", { :locale=>'cn' } %>
+              <% else %>
+            <%= link_to "English", { :locale=>'en' } %>
+            <% end%>
+        </p>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+</div>
 
 
 

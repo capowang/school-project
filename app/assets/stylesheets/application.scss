@@ -12,9 +12,9 @@
 @import "components/index";
 @import "pages/index";
 
-.navbar-brand {
-  margin-left: 20px;
 
+.logo {
+  background: none;
 }
 
 .nav-link {
@@ -30,7 +30,41 @@
 .navbar .navbar-collapse {
     margin-top: 20px;
 }
-
- .h5, a:hover,a:visited, a:focus {
-    text-decoration:none;
+.h5 {
+  color: #ffffff;
 }
+
+.nav-item a {
+  color: white;
+}
+
+a:hover,a:focus,  {
+    text-decoration:none;
+    color: #102260;
+}
+
+.navbar {
+  width: 100vw;
+  position: absolute;
+  z-index: 5;
+  transition: all 0.4s;
+}
+
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fefefe;
+    }
+
+    .nav-item a {
+    color: #1D37A3;
+}
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+}
+
+
